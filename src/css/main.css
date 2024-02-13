@@ -1,0 +1,108 @@
+/* write css to design form/table */
+* {
+    font-family: sans-serif;
+}
+
+*::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #f5f5f5;
+}
+
+*::-webkit-scrollbar {
+    width: 6px;
+    background-color: #f5f5f5;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: rgb(58, 58, 58);
+}
+
+.nav-heading {
+    color: white;
+    margin: 5px 10px;
+}
+
+.status1,
+.status1 .card {
+    border-color: gray;
+}
+
+.status2,
+.status2 .card {
+    border-color: blueviolet;
+}
+
+.status3,
+.status3 .card {
+    border-color: rgb(166, 166, 4);
+}
+
+.status4,
+.status4 .card {
+    border-color: rgb(49, 168, 49);
+}
+
+.status1 .card-header {
+    background-color: gray;
+    color: white;
+    text-transform: capitalize;
+}
+
+.status2 .card-header {
+    background-color: blueviolet;
+    color: white;
+    text-transform: capitalize;
+}
+
+.status3 .card-header {
+    background-color: rgb(166, 166, 4);
+    color: white;
+    text-transform: capitalize;
+}
+
+.status4 .card-header {
+    background-color: rgb(49, 168, 49);
+    color: white;
+    text-transform: capitalize;
+}
+
+.status1 .card-header,
+.status2 .card-header,
+.status3 .card-header,
+.status4 .card-header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.status1,
+.status2,
+.status3,
+.status4 {
+    height: 50vh;
+    overflow: auto;
+    width: 25vw;
+}
+
+#status-div {
+    display: none;
+}
+
+.validate {
+    color: red;
+}
+
+option {
+    text-transform: uppercase;
+}
+
+select {
+    text-transform: uppercase;
+}
+
+.invalid-input {
+    border: 2px solid red;
+}

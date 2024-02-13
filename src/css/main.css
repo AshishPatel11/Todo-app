@@ -87,16 +87,16 @@
     width: 25vw;
 }
 
+.task-card {
+    cursor: grab;
+}
+
 #status-div {
     display: none;
 }
 
 .validate {
     color: red;
-}
-
-option {
-    text-transform: uppercase;
 }
 
 select {

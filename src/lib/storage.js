@@ -25,14 +25,9 @@ export default class Storage {
     delete(id) {
         const records = this.getData()
         const index = records.findIndex(record => Number(record.taskId) === Number(id))
-        if (confirm("Do you want to delete this task permanently??")) {
-            const deleteData = records.splice(index, 1)
-            this.set(records)
-            return deleteData[0]
-        }
-        else {
-            return null
-        }
+        const deleteData = records.splice(index, 1)
+        this.set(records)
+        return deleteData[0]
     }
 
     update(data) {

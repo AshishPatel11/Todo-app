@@ -11,6 +11,10 @@ export default class Task {
         document.getElementById("resetSearch").addEventListener("click", this.resetSearch)
         this.status = status
 
+        // this.status.forEach((sts, key) => {
+        //     this.createElements("div", { class: `card m-2 status${key + 1}`, id: `status-${key + 1}` }, this.cardList)
+        // })
+
         status.forEach((element, key) => {
             this.cardList.querySelectorAll("h6.card-header")[key].innerText = element
             document.getElementById(`status-${key + 1}`).addEventListener("dragover", (event) => { event.preventDefault() })

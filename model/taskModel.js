@@ -20,9 +20,9 @@ const taskStatus = [
         name: "completed",
         color: "rgb(49, 168, 49)"
     },
-    // {
-    //     name: "final",
-    //     color: "darkslateblue"
-    // }
+    {
+        name: "final",
+        color: "darkslateblue"
+    }
 ]
 export default taskStatus;

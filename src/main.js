@@ -10,7 +10,9 @@ class Main {
         this.confirm = false
         this.Modal = document.getElementById('exampleModal')
         this.myModal = new bootstrap.Modal(this.Modal)
-
+        this.Modal.addEventListener("shown.bs.modal", () => {
+            document.getElementById("confirm").focus()
+        })
 
         form.form.addEventListener("submit", (event) => {
             event.preventDefault();

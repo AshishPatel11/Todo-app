@@ -12,7 +12,7 @@ export default class Task {
         this.status = status
 
         this.status.forEach((sts, key) => {
-            const div = this.createElements("div", { class: `card m-2 status${key + 1} card-boxs`, id: `status-${key + 1}`, style: `border-color:${sts.color}` }, this.cardList)
+            const div = this.createElements("div", { class: `card m-2 status${key + 1}  card-boxs`, id: `status-${key + 1}`, style: `border-color:${sts.color}` }, this.cardList)
             this.createElements("h6", { class: "card-header", style: `background-color:${sts.color}` }, div, sts.name)
             document.getElementById(`status-${key + 1}`).addEventListener("dragover", (event) => { event.preventDefault() })
             document.getElementById(`status-${key + 1}`).addEventListener("drop", this.drop)
@@ -31,9 +31,7 @@ export default class Task {
     display(data) {
         // const [status1, status2, status3, status4] = this.status
         const index = this.status.findIndex(element => element.name === data.taskStatus)
-        console.log(index, data.taskStatus)
         const statusCard = this.cardList.querySelector(`#status-${index + 1}`)
-        console.log(statusCard)
         statusCard.appendChild(this.getCard(data))
     }
 
@@ -83,9 +81,7 @@ export default class Task {
     }
 
     updateTaskList(newData, oldData) {
-        console.log(oldData)
         const oldCard = document.getElementById(`task_${oldData.taskId}`)
-        console.log(oldCard)
         if (newData.taskStatus === oldData.taskStatus) {
             oldCard.replaceWith(this.getCard(newData))
         }
@@ -113,13 +109,11 @@ export default class Task {
     }
 
     drag = (event) => {
-        console.log(event.target.id)
         event.dataTransfer.setData("cardId", event.target.id)
     }
 
     drop(event) {
         event.preventDefault();
-        console.log(event)
         const cardId = event.dataTransfer.getData("cardId")
         this.appendChild(document.getElementById(cardId))
         Storage.updateStatus(Number(cardId.split("_")[1]), taskStatus[Number(this.id.split("-")[1]) - 1].name)

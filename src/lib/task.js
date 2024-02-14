@@ -11,18 +11,17 @@ export default class Task {
         document.getElementById("resetSearch").addEventListener("click", this.resetSearch)
         this.status = status
 
-        // this.status.forEach((sts, key) => {
-        //     this.createElements("div", { class: `card m-2 status${key + 1}`, id: `status-${key + 1}` }, this.cardList)
-        // })
-
-        status.forEach((element, key) => {
-            this.cardList.querySelectorAll("h6.card-header")[key].innerText = element
+        this.status.forEach((sts, key) => {
+            const div = this.createElements("div", { class: `card m-2 status${key + 1} card-boxs`, id: `status-${key + 1}`, style: `border-color:${sts.color}` }, this.cardList)
+            this.createElements("h6", { class: "card-header", style: `background-color:${sts.color}` }, div, sts.name)
             document.getElementById(`status-${key + 1}`).addEventListener("dragover", (event) => { event.preventDefault() })
             document.getElementById(`status-${key + 1}`).addEventListener("drop", this.drop)
-        });
+        })
+
         data.forEach(record => {
             this.display(record)
         })
+
         this.editEvent = new Event("edit")
         this.deleteEvent = new Event("delete")
         this.editId = null
@@ -31,13 +30,16 @@ export default class Task {
 
     display(data) {
         // const [status1, status2, status3, status4] = this.status
-        const index = this.status.findIndex(element => element === data.taskStatus)
+        const index = this.status.findIndex(element => element.name === data.taskStatus)
+        console.log(index, data.taskStatus)
         const statusCard = this.cardList.querySelector(`#status-${index + 1}`)
+        console.log(statusCard)
         statusCard.appendChild(this.getCard(data))
     }
 
     getCard(data) {
-        const newTaskCard = this.createElements("div", { draggable: true, class: "card m-3 mb-0 p-3 task-card", id: `task_${data.taskId}`, ondragstart: this.drag })
+        //Create new card as per given data
+        const newTaskCard = this.createElements("div", { draggable: true, class: "card m-3 mb-0 p-3 task-card", id: `task_${data.taskId}`, style: `border-color:inherit`, ondragstart: this.drag })
         const taskHeader = this.createElements("div", { class: "d-flex justify-content-between" }, newTaskCard)
         this.createElements("h5", { class: "card-title fw-semibold" }, taskHeader, data.taskName)
         const options = this.createElements("div", { class: "d-flex" }, taskHeader)
@@ -120,6 +122,6 @@ export default class Task {
         console.log(event)
         const cardId = event.dataTransfer.getData("cardId")
         this.appendChild(document.getElementById(cardId))
-        Storage.updateStatus(Number(cardId.split("_")[1]), taskStatus[Number(this.id.split("-")[1]) - 1])
+        Storage.updateStatus(Number(cardId.split("_")[1]), taskStatus[Number(this.id.split("-")[1]) - 1].name)
     }
 }

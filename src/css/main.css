@@ -25,46 +25,7 @@
     margin: 5px 10px;
 }
 
-.status1,
-.status1 .card {
-    border-color: gray;
-}
-
-.status2,
-.status2 .card {
-    border-color: blueviolet;
-}
-
-.status3,
-.status3 .card {
-    border-color: rgb(166, 166, 4);
-}
-
-.status4,
-.status4 .card {
-    border-color: rgb(49, 168, 49);
-}
-
-.status1 .card-header {
-    background-color: gray;
-    color: white;
-    text-transform: capitalize;
-}
-
-.status2 .card-header {
-    background-color: blueviolet;
-    color: white;
-    text-transform: capitalize;
-}
-
-.status3 .card-header {
-    background-color: rgb(166, 166, 4);
-    color: white;
-    text-transform: capitalize;
-}
-
-.status4 .card-header {
-    background-color: rgb(49, 168, 49);
+.card-boxs .card-header {
     color: white;
     text-transform: capitalize;
 }
@@ -78,13 +39,15 @@
     z-index: 1;
 }
 
-.status1,
-.status2,
-.status3,
-.status4 {
+.card-boxs {
     height: 50vh;
     overflow: auto;
-    width: 25vw;
+    min-width: 22rem;
+    width: 100%;
+}
+
+.card-container {
+    overflow: auto;
 }
 
 .task-card {

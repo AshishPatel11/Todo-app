@@ -10,6 +10,8 @@ class Main {
         this.confirm = false
         this.Modal = document.getElementById('exampleModal')
         this.myModal = new bootstrap.Modal(this.Modal)
+
+
         form.form.addEventListener("submit", (event) => {
             event.preventDefault();
             if (!form.validate())

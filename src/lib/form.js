@@ -4,7 +4,7 @@ export default class Form {
         this.form = document.getElementById(formId)
         const select = document.getElementById("taskStatus")
         this.status.forEach(element => {
-            this.createElements("option", { value: element }, select, element)
+            this.createElements("option", { value: element.name }, select, element.name)
         })
         document.getElementById("resetBtn").addEventListener("click", this.reset)
         document.getElementById("taskName").addEventListener("change", function () {
@@ -21,10 +21,9 @@ export default class Form {
         })
         if (!formData.taskId)
             formData.taskId = Date.now()
-        if (!formData.taskStatus)
-            formData.taskStatus = this.status[0]
         return formData;
     }
+
     updateForm(data) {
         this.reset();
         document.getElementById("status-div").style.display = "block"

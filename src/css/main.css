@@ -70,3 +70,21 @@ select {
 .invalid-input {
     border: 2px solid red;
 }
+
+@media only screen and (max-width: 768px) {
+
+    .card-container,
+    .card-header {
+        flex-wrap: wrap;
+    }
+
+    #search-form {
+        height: 48px;
+    }
+
+    #searchBox,
+    #searchBtn,
+    #resetSearch {
+        font-size: 14px;
+    }
+}

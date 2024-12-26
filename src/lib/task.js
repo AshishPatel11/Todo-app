@@ -13,7 +13,7 @@ export default class Task {
 
         this.status.forEach((sts, key) => {
             const div = this.createElements("div", { class: `card m-2 status${key + 1}  card-boxs`, id: `status-${key + 1}`, style: `border-color:${sts.color}` }, this.cardList)
-            this.createElements("h6", { class: "card-header", style: `background-color:${sts.color}` }, div, sts.name)
+            this.createElements("h3", { class: "card-header", style: `background-color:${sts.color}` }, div, sts.name)
             document.getElementById(`status-${key + 1}`).addEventListener("dragover", (event) => { event.preventDefault() })
             document.getElementById(`status-${key + 1}`).addEventListener("drop", this.drop)
         })

@@ -15,9 +15,9 @@
 
 <body>
   <nav class="navbar bg-primary">
-    <h5 class="nav-heading">Todo List App</h5>
+    <h1 class="nav-heading">Todo List App</h1>
   </nav>
-  <section class="form-container card m-3">
+  <main class="form-container card m-3">
     <h5 class="card-header fw-medium">Add New Task</h5>
     <form id="task-form" class="task-form m-3">
       <div class="mb-3">
@@ -40,7 +40,7 @@
       <button type="submit" id="submitBtn" class="btn btn-success">Add Task</button>
       <button type="reset" id="resetBtn" class="btn btn-danger">Clear</button>
     </form>
-  </section>
+  </main>
 
   <section id="taskList" class="task-list card m-3">
     <div class="card-header d-flex justify-content-between align-items-center">
@@ -48,8 +48,8 @@
       <form class="d-flex" role="search" id="search-form">
         <input class="form-control me-2" type="search" id="searchBox" name="searchData" placeholder="Search"
           aria-label="Search" />
-        <button class="btn btn-outline-success" id="searchBtn" type="submit">Search</button>
-        <button type="reset" id="resetSearch" class="btn btn-outline-danger w-100 ms-2">Clear Search</button>
+        <!-- <button class="btn btn-outline-success" id="searchBtn" type="submit">Search</button> -->
+        <!-- <button type="reset" id="resetSearch" class="btn btn-outline-danger w-100 ms-2">Clear Search</button> -->
       </form>
     </div>
 
@@ -78,7 +78,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Task</h1>
+          <h3 class="modal-title fs-5" id="exampleModalLabel">Delete Task</h3>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">Do you want to delete this task permanently??</div>

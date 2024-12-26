@@ -2,7 +2,7 @@
 const taskStatus = [
     {
         name: "backlog",
-        color: "gray"
+        color: "#26394E"
     },
     {
         name: "todo",
@@ -14,11 +14,11 @@ const taskStatus = [
     },
     {
         name: "review",
-        color: "rgb(166, 166, 4)"
+        color: "#4C4C02"
     },
     {
         name: "completed",
-        color: "rgb(49, 168, 49)"
+        color: "#044C04"
     }
 ]
 export default taskStatus;
